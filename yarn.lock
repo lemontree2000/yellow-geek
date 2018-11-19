@@ -1194,7 +1194,7 @@ apollo-cache@1.1.19, apollo-cache@^1.1.19:
   dependencies:
     apollo-utilities "^1.0.24"
 
-apollo-client@^2.4.2, apollo-client@^2.4.4:
+apollo-client@^2.4.2:
   version "2.4.4"
   resolved "http://r.cnpmjs.org/apollo-client/download/apollo-client-2.4.4.tgz#b96d4fc2dd856b24552bb2e2da466219b0d4eb1f"
   dependencies:
@@ -5933,6 +5933,10 @@ npmlog@^4.0.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npmjs.org/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
 
 nth-check@^1.0.2, nth-check@~1.0.1:
   version "1.0.2"
