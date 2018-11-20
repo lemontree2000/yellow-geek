@@ -16,8 +16,9 @@
       <span>动态</span>
     </router-link>
     <router-link class="nav-bar-item" tag="section" to="/createDynamic">
-      <div>
-        <img src="../../assets/logo.png" alt="">
+      <div style="font-size: 40px">
+        <img src="./image/ic_custom_topic_create_new_topic@3x.png" alt="">
+        +
       </div>
       <!-- <span>首页</span> -->
     </router-link>
