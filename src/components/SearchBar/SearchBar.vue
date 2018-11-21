@@ -1,19 +1,16 @@
-<!-- 首页 -->
+<!-- 搜索栏 -->
 <template>
-  <div class="yg-home">
-    <SearchBar></SearchBar>
+  <div class="yg-search-bar">
+    <input class="search-bar-input" placeholder="中国音乐公告牌"/>
+    <span class="search-bar-scan"></span>
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
-import SearchBar from "@/components/SearchBar/SearchBar.vue";
 
 @Component({
-  name: "home",
-  components: {
-    SearchBar
-  },
+  components: {},
 })
 export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
@@ -38,5 +35,21 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-
+.yg-search-bar {
+  height: 44px;
+  line-height: 44px;
+  background-color: #ffe411;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  .search-bar-input {
+    flex: 1;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    padding-left: 31px;
+  }
+}
 </style>

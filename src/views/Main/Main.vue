@@ -1,6 +1,6 @@
 <!-- 首页 -->
 <template>
-  <div class="main">
+  <div class="yg-main">
      <keep-alive>
       <router-view/>
     </keep-alive>

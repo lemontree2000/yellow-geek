@@ -1,6 +1,6 @@
 <!-- 导航组件 -->
 <template>
-  <nav class="nav-bar">
+  <nav class="yg-nav-bar">
     <router-link class="nav-bar-item" tag="section" to="/home">
       <div>
         <img src="./image/ic_tabbar_home_unselected@3x.png" alt="">
@@ -16,9 +16,10 @@
       <span>动态</span>
     </router-link>
     <router-link class="nav-bar-item" tag="section" to="/createDynamic">
-      <div style="font-size: 40px">
-        <img src="./image/ic_custom_topic_create_new_topic@3x.png" alt="">
-        +
+      <div style="font-size: 45px;">
+        <div class="add-topioc-button">
+        <img src="./image/ic_common_subscribe_follow_small@3x.png" alt="">
+        </div>
       </div>
       <!-- <span>首页</span> -->
     </router-link>
@@ -43,6 +44,7 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({
+  name: "nav-bar",
   components: {},
 })
 export default class Home extends Vue {
@@ -69,7 +71,7 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-.nav-bar {
+.yg-nav-bar {
   background: #fff;
   position: fixed;
   max-width: 640px;
@@ -88,13 +90,27 @@ export default class Home extends Vue {
     flex-direction: column;
     justify-content: center;
     color: #acacac;
-    div {
+    img {
+      width: 25px;
+      vertical-align: middle;
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+    &:nth-child(3) {
       img {
-        width: 25px;
-        vertical-align: middle;
-        &:nth-child(2) {
-          display: none;
-        }
+        width: 16px;
+      }
+      .add-topioc-button {
+        margin: 0 auto;
+        width: 46px;
+        height: 32px;
+        line-height: 24px;
+        background: #ffe411;
+        border-radius: 8px;
+        text-align: center;
+        color: #404040;
+        font-weight: bold;
       }
     }
   }
