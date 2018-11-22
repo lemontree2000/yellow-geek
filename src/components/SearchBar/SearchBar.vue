@@ -37,7 +37,6 @@ export default class Home extends Vue {
 <style lang='less'  scoped>
 .yg-search-bar {
   height: 44px;
-  line-height: 44px;
   background-color: #ffe411;
   padding: 0 15px;
   display: flex;
@@ -45,11 +44,18 @@ export default class Home extends Vue {
   .search-bar-input {
     flex: 1;
     height: 30px;
-    line-height: 30px;
+    // line-height: 18px;
     width: 100%;
     background-color: #fff;
     border-radius: 4px;
     padding-left: 31px;
+    background-image: url('./image/ic_navbar_search@3x.png');
+    background-repeat: no-repeat;
+    background-position: 6px 50%;
+    background-size: 19px;
+    font-size: 13px;
+    color:#777;
+    vertical-align: middle;
   }
 }
 </style>
