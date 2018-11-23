@@ -2,17 +2,20 @@
 <template>
   <div class="yg-home">
     <SearchBar></SearchBar>
+    <TopicBar></TopicBar>
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
 import SearchBar from "@/components/SearchBar/SearchBar.vue";
+import TopicBar from "./components/TopicBar.vue";
 
 @Component({
   name: "home",
   components: {
-    SearchBar
+    SearchBar,
+    TopicBar
   },
 })
 export default class Home extends Vue {
