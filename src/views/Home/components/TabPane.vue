@@ -16,7 +16,7 @@
             <span>X</span>
           </div>
         </div>
-        <div class="home-recommend-action">去取报</div>
+        <div class="home-recommend-action">去取报📰</div>
       </div>
     </div>
   </div>
@@ -51,30 +51,65 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-  .yg-tab-pane {
-    .tabs {
-      background-color: #fff;
-      ul {
-        padding: 0 15px;
-        font-size: 0;
-        li {
-          color: #bfbfbf;
-          font-size: 16px;
-          display: inline-block;
-          padding: 12px 0;
-          margin-right: 30px;
-          box-sizing: border-box;
-          &.active {
-            color: #404040;
-            border-bottom: 4px solid #ffe411;
-          }
+.yg-tab-pane {
+  .tabs {
+    background-color: #fff;
+    ul {
+      padding: 0 15px;
+      font-size: 0;
+      li {
+        color: #bfbfbf;
+        font-size: 16px;
+        display: inline-block;
+        padding: 12px 0;
+        margin-right: 30px;
+        box-sizing: border-box;
+        &.active {
+          color: #404040;
+          border-bottom: 4px solid #ffe411;
         }
       }
     }
-    .home-recommend {
-      .home-recommend-detail {
-        padding: 15px;
+  }
+  .home-recommend {
+    .home-recommend-detail {
+      padding: 15px;
+      display: flex;
+      img {
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+      }
+      div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        justify-content: space-around;
+        h4 {
+          font-size: 16px;
+          color:#404040;
+        }
+        p {
+          font-size: 14px;
+          color: #868686;
+        }
+        span {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
       }
     }
+    .home-recommend-action {
+      height: 44px;
+      line-height: 44px;
+      color: #03a9f4;
+      font-size: 14px;
+      text-align: center;
+      border-top: 1px solid #dbdbdb;
+    }
   }
+  margin-bottom: 8px;
+}
 </style>

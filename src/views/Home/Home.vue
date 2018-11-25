@@ -4,6 +4,7 @@
     <SearchBar></SearchBar>
     <TopicBar></TopicBar>
     <TabPane></TabPane>
+    1
   </div>
 </template>
 

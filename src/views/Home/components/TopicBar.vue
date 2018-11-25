@@ -74,7 +74,7 @@ export default class Home extends Vue {
 @import "~@/styles/mixin.less";
 .yg-topic-bar {
   padding-bottom: 18px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   background:#fff;
   .topic-bar-top {
     display: flex;
