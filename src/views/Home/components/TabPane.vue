@@ -3,20 +3,20 @@
   <div class="yg-tab-pane">
     <div class="tabs">
       <ul>
-        <li>关注</li>
+        <li class="active">关注</li>
         <li>推荐</li>
         <li>附近</li>
       </ul>
       <div class="home-recommend">
-        <div>
-          <img src="" alt="">
+        <div class="home-recommend-detail">
+          <img src="../../../assets/home-recommend.png" alt="">
           <div>
             <h4>即民晚报：在即刻拍猫的人🐈</h4>
             <p>他拍了一年的猫，现在想记录时代</p>
             <span>X</span>
           </div>
         </div>
-        <div>去取报</div>
+        <div class="home-recommend-action">去取报</div>
       </div>
     </div>
   </div>
@@ -54,6 +54,27 @@ export default class Home extends Vue {
   .yg-tab-pane {
     .tabs {
       background-color: #fff;
+      ul {
+        padding: 0 15px;
+        font-size: 0;
+        li {
+          color: #bfbfbf;
+          font-size: 16px;
+          display: inline-block;
+          padding: 12px 0;
+          margin-right: 30px;
+          box-sizing: border-box;
+          &.active {
+            color: #404040;
+            border-bottom: 4px solid #ffe411;
+          }
+        }
+      }
+    }
+    .home-recommend {
+      .home-recommend-detail {
+        padding: 15px;
+      }
     }
   }
 </style>
