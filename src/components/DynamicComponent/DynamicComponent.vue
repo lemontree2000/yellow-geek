@@ -1,6 +1,21 @@
 <!-- 动态组件 -->
 <template>
-  <div></div>
+  <div class="dynamic-component">
+    <head>
+      <div class="topic">今日份的摄影</div>
+      <div>
+        <span class="time">23:11</span>
+        <span class="more-btn">⬇️</span>
+      </div>
+    </head>
+    <section class="dynamic-content">
+      <div class="dynamic-content-text"></div>
+      <div class="dynamic-content-img">
+        <img src="" alt="">
+      </div>
+
+    </section>
+  </div>
 </template>
 
 <script lang='ts'>
