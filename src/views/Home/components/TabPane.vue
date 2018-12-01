@@ -51,6 +51,8 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
+@import "~@/styles/mixin.less";
+
 .yg-tab-pane {
   .tabs {
     background-color: #fff;
@@ -58,7 +60,7 @@ export default class Home extends Vue {
       padding: 0 15px;
       font-size: 0;
       li {
-        color: #bfbfbf;
+        color: @color-text-disabled;
         font-size: 16px;
         display: inline-block;
         padding: 12px 0;
@@ -66,7 +68,7 @@ export default class Home extends Vue {
         box-sizing: border-box;
         &.active {
           color: #404040;
-          border-bottom: 4px solid #ffe411;
+          border-bottom: 4px solid @brand-primary;
         }
       }
     }

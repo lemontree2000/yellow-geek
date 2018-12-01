@@ -71,6 +71,8 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
+@import "~@/styles/mixin.less";
+
 .yg-nav-bar {
   background: #fff;
   position: fixed;
@@ -106,7 +108,7 @@ export default class Home extends Vue {
         width: 46px;
         height: 32px;
         line-height: 24px;
-        background: #ffe411;
+        background: @brand-primary;
         border-radius: 8px;
         text-align: center;
         color: #404040;

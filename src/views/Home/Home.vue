@@ -1,10 +1,10 @@
 <!-- 首页 -->
 <template>
   <div class="yg-home">
-    <SearchBar></SearchBar>
-    <TopicBar></TopicBar>
-    <TabPane></TabPane>
-    1
+    <SearchBar/>
+    <TopicBar/>
+    <TabPane/>
+    <DynamicComponent/>
   </div>
 </template>
 
@@ -13,13 +13,15 @@ import { Component, Vue } from "vue-property-decorator";
 import SearchBar from "@/components/SearchBar/SearchBar.vue";
 import TopicBar from "./components/TopicBar.vue";
 import TabPane from "./components/TabPane.vue";
+import DynamicComponent from "@/components/DynamicComponent/DynamicComponent.vue";
 
 @Component({
   name: "home",
   components: {
     SearchBar,
     TopicBar,
-    TabPane
+    TabPane,
+    DynamicComponent
   },
 })
 export default class Home extends Vue {

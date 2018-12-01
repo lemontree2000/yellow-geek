@@ -105,7 +105,7 @@ export default class Home extends Vue {
       margin-right: 15px;
       &.light {
         position: relative;
-        border-color: #ffe411;
+        border-color: @brand-primary;
         margin-right: 30px;
         &::before {
           content: attr(data-before);
@@ -114,7 +114,7 @@ export default class Home extends Vue {
           top: 0;
           width: 47px;
           height: 15px;
-          background-color: #ffe411;
+          background-color: @brand-primary;
           font-size: 10px;
           // padding-left: 6px;
           text-align: center;

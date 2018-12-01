@@ -1,19 +1,35 @@
 <!-- 动态组件 -->
 <template>
   <div class="dynamic-component">
-    <head>
-      <div class="topic">今日份的摄影</div>
+    <header>
+      <div class="topic-tag">今日份的摄影</div>
       <div>
         <span class="time">23:11</span>
         <span class="more-btn">⬇️</span>
       </div>
-    </head>
+    </header>
     <section class="dynamic-content">
       <div class="dynamic-content-text"></div>
       <div class="dynamic-content-img">
         <img src="" alt="">
       </div>
-
+    </section>
+    <section class="hot-comment">
+      <head>
+        <span class="icon"></span>
+        <span class="favour-count">177赞</span>
+      </head>
+      <div class="hot-comment-content">
+        <p>
+          <span class="user-name">乌漆漆：</span>
+          <span class="comment-text">
+            这个主题不错，good！！！
+          </span>
+        </p>
+        <div class="comment-img">
+          <img src="" alt="">
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -47,5 +63,15 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-
+  .dynamic-component {
+    padding: 15px;
+    background: #fff;
+    header {
+      // padding: 1
+      .topic-tag {
+        padding: 8px 11px;
+        // background-color:
+      }
+    }
+  }
 </style>

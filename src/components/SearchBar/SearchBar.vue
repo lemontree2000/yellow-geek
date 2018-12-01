@@ -35,9 +35,11 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
+@import "~@/styles/mixin.less";
+
 .yg-search-bar {
   height: 44px;
-  background-color: #ffe411;
+  background-color: @brand-primary;
   padding: 0 15px;
   display: flex;
   align-items: center;
