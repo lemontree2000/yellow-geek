@@ -39,5 +39,7 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-
+.yg-main {
+  padding-bottom: 50px;
+}
 </style>

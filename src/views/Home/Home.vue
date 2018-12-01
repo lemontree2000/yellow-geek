@@ -5,6 +5,10 @@
     <TopicBar/>
     <TabPane/>
     <DynamicComponent/>
+    <DynamicComponent/>
+    <DynamicComponent/>
+    <DynamicComponent/>
+    <DynamicComponent/>
   </div>
 </template>
 
