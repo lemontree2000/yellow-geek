@@ -67,7 +67,7 @@ export default class Home extends Vue {
         margin-right: 30px;
         box-sizing: border-box;
         &.active {
-          color: #404040;
+          color: @color-text-base;
           border-bottom: 4px solid @brand-primary;
         }
       }
@@ -90,7 +90,7 @@ export default class Home extends Vue {
         justify-content: space-around;
         h4 {
           font-size: 16px;
-          color:#404040;
+          color:@color-text-base;
         }
         p {
           font-size: 14px;
@@ -106,9 +106,10 @@ export default class Home extends Vue {
     .home-recommend-action {
       height: 44px;
       line-height: 44px;
-      color: #03a9f4;
+      color: @color-text-highlight;
       font-size: 14px;
       text-align: center;
+      font-weight: 600;
       border-top: 1px solid #dbdbdb;
     }
   }

@@ -84,7 +84,7 @@ export default class Home extends Vue {
       font-size: 16px;
     }
     span {
-      color: #07aaf4;
+      color: @color-text-highlight;
       font-size: 14px;
     }
   }

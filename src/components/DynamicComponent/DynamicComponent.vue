@@ -63,15 +63,20 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-  .dynamic-component {
-    padding: 15px;
-    background: #fff;
-    header {
-      // padding: 1
-      .topic-tag {
-        padding: 8px 11px;
-        // background-color:
-      }
+@import "~@/styles/mixin.less";
+.dynamic-component {
+  padding: 15px;
+  background: @fill-base;
+  header {
+    // padding: 1
+    display: flex;
+    .topic-tag {
+      padding: 8px 11px;
+      background-color: @fill-body;
+      font-size: @font-size-caption-sm;
+      color: @color-text-highlight;
+      border-radius: 18px;
     }
   }
+}
 </style>
