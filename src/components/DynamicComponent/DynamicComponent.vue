@@ -23,24 +23,25 @@
         <img src="" alt="">
       </div> -->
     </section>
-    <!-- <section class="hot-comment">
-      <footer>
-        <span class="icon"></span>
-        <span class="favour-count">177赞</span>
-      </footer>
+    <section class="hot-comment">
+      <header>
+        <span class="icon"><img src="~@/assets/ic_comment_popular@3x.png" alt=""></span>
+        <span class="favour-count">177 赞</span>
+      </header>
       <div class="hot-comment-content">
         <p>
-
           <span class="user-name">乌漆漆：</span>
           <span class="comment-text">
             这个主题不错，good！！！
+            这个主题不错，good！！！
+            这个主题不错，good！！！
           </span>
         </p>
-        <div class="comment-img">
+        <!-- <div class="comment-img">
           <img src="" alt="">
-        </div>
+        </div> -->
       </div>
-    </section> -->
+    </section>
     <section class="dynamic-footer">
       <div class="favour">
         <i class="icon">
@@ -128,15 +129,15 @@ export default class Home extends Vue {
           position: relative;
           left: -19px;
           border-right: 20px solid transparent;
+          filter: drop-shadow(20px 0 0 #03a9f4);
           background-size: cover;
           background-image: url("./image/ic_personaltab_activity_add_topic@3x.png");
           background-repeat: no-repeat;
-          filter: drop-shadow(20px 0 0 #03a9f4);
         }
       }
     }
     .right {
-      line-height: 33px;
+      display: flex;
       .time {
         font-size: @font-size-icontext;
         color: @color-text-placeholder;
@@ -187,6 +188,34 @@ export default class Home extends Vue {
         }
       }
     }
+  }
+  .hot-comment {
+    padding: 10px;
+    background-color: @fill-body;
+    margin-bottom: 15px;
+    border-radius: @radius-sm;
+    header {
+      display: flex;
+      justify-content:space-between;
+      font-size: @font-size-caption-sm;
+      color: @color-text-caption;
+      margin-bottom: 5px;
+      .icon {
+        img {
+          width: 40px;
+        }
+      }
+    }
+    .hot-comment-content {
+      font-size: @font-size-base;
+      .user-name {
+        color: @color-text-highlight;
+      }
+      .comment-text {
+        color: @color-text-base;
+      }
+    }
+
   }
   margin-bottom: 10px;
 }
