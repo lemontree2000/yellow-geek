@@ -1,6 +1,31 @@
 <!-- 我的 -->
 <template>
-  <div>我的</div>
+  <section class="yg-mine">
+    <header>
+      <span class="setting"></span>
+    </header>
+    <section class="yg-mine-container">
+      <section class="yg-mine-card">
+        <div class="avatar">
+          <img src alt>
+        </div>
+        <div class="name-width-seecount">
+          <h1>
+            即刻鸡客
+          </h1>
+          <p>
+            11人来看过你
+          </p>
+        </div>
+      </section>
+      <ul class="yg-mine-list">
+
+      </ul>
+      <ul class="yg-mine-list">
+
+      </ul>
+    </section>
+  </section>
 </template>
 
 <script lang='ts'>
@@ -32,5 +57,4 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-
 </style>
