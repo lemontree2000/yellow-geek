@@ -21,29 +21,29 @@
       </section>
       <ul class="yg-mine-list">
         <li>
-          <img src alt>
+          <img src="./image/ic_personal_tab_my_topic@3x.png" alt>
           <span>我关注的主题</span>
         </li>
         <li>
-          <img src alt>
+          <img src="./image/ic_personal_tab_collection@3x.png" alt>
           <span>我的收藏</span>
         </li>
         <li>
-          <img src alt>
+          <img src="./image/ic_personal_tab_activity_notification_new_messages_2@3x.png" alt>
           <span>我的通知</span>
         </li>
         <li>
-          <img src alt>
+          <img src="./image/ic_personal_tab_support_center@3x.png" alt>
           <span>帮助与反馈</span>
         </li>
       </ul>
       <ul class="yg-mine-list">
         <li>
-          <img src alt>
+          <img src="./image/ic_personal_tab_custom_topic@3x.png" alt>
           <span>我创建的主题</span>
         </li>
         <li>
-          <img src alt>
+          <img src="./image/ic_personal_tab_kingcard@3x.png" alt>
           <span>免流量</span>
         </li>
       </ul>
@@ -159,7 +159,7 @@ export default class Home extends Vue {
       background-color: @fill-base;
       margin-bottom: 10px;
       &:last-child {
-        margin-bottom: 100px;
+        margin-bottom: 60px;
       }
       li {
         height: 50px;
@@ -168,6 +168,11 @@ export default class Home extends Vue {
         font-size: @font-size-base;
         color: @color-text-base;
         .border-1px(border-bottom, @border-color-base);
+        img {
+          width: 20px;
+          vertical-align: middle;
+          margin-right: 15px;
+        }
       }
     }
 
