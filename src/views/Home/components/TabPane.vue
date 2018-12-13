@@ -13,7 +13,7 @@
           <div>
             <h4>即民晚报：在即刻拍猫的人🐈</h4>
             <p>他拍了一年的猫，现在想记录时代</p>
-            <span>X</span>
+            <span></span>
           </div>
         </div>
         <div class="home-recommend-action">去取报📰</div>
@@ -98,6 +98,11 @@ export default class Home extends Vue {
         }
         span {
           position: absolute;
+          width: 16px;
+          height: 16px;
+          padding: 3px;
+          background: url("~@/assets/ic_common_close_gray@3x.png") no-repeat center;
+          background-size: 16px 16px;
           right: 0;
           top: 0;
         }

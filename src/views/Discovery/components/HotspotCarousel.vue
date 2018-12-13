@@ -1,21 +1,16 @@
-<!-- 发现 -->
+<!-- 热门活动轮播图 -->
 <template>
-  <div class="yg-discovery">
-    <SearchBar :isWhite="true"/>
-    <HostpotCarousel/>
+  <div class="discovery-carousel">
+    discovery-carousel
+
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
-import HostpotCarousel from "./components/HotspotCarousel.vue";
-import SearchBar from "@/components/SearchBar/SearchBar.vue";
+
 @Component({
-  name: "discovery",
-  components: {
-    HostpotCarousel,
-    SearchBar
-  },
+  components: {},
 })
 export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
