@@ -4,10 +4,17 @@
     <div class="tabs">
       <div class="wrapper">
         <ul>
-          <li class="tab-item active">关注</li>
-          <li class="tab-item">推荐</li>
-          <li class="tab-item">附近</li>
-          <li class="active-bar"></li>
+          <li
+            class="tab-item"
+            v-for="(item, index) in tabData"
+            :class="{'active': tabIndex === index }"
+            @click="switchTab(index)"
+            :key="item"
+            v-text="item"
+          ></li>
+          <!-- <li class="tab-item" :class="{'active': tabIndex === 1 }">推荐</li>
+          <li class="tab-item" :class="{'active': tabIndex === 2 }">附近</li>-->
+          <li class="active-bar" :style="{transform: `translateX(${tabWidth*tabIndex}px)`}"></li>
         </ul>
       </div>
       <div class="home-recommend">
@@ -35,18 +42,23 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
     swiperSlide
   },
 })
+
 export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
-
   // 数据
-  public tableIndex: number = 0;
+  public tabIndex: number = 0;
+  public tabData: string[] = ["关注", "推荐", "附近"];
+  public tabWidth: number = 62;
   // public b: string = "";
   // 生命周期
   // public created(){}
   // public mounted(){}
 
   // methods
-  // public handleClick() {}
+  public switchTab(tabIndex: number): void {
+    console.log(tabIndex);
+    this.tabIndex = tabIndex;
+  }
 
   // computed
   // get computedName(){},
@@ -55,7 +67,6 @@ export default class Home extends Vue {
   // @Watch("child")
   // onChildChanged(val: string, oldVal: string) { }
 }
-
 </script>
 <style lang='less'  scoped>
 @import "~@/styles/mixin.less";
@@ -84,9 +95,9 @@ export default class Home extends Vue {
           background-color: @brand-primary;
           width: 32px;
           position: absolute;
-          bottom:0;
+          bottom: 0;
           transition-duration: 300ms;
-          transform: translateX(62px)
+          transform: translateX(62px);
         }
       }
     }
