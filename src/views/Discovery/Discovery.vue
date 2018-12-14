@@ -1,7 +1,7 @@
 <!-- 发现 -->
 <template>
   <div class="yg-discovery">
-    <SearchBar :isWhite="true"/>
+    <SearchBar :isWhite="true" :hasScan="true"/>
     <HostpotCarousel/>
   </div>
 </template>

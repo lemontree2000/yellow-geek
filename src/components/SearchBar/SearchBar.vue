@@ -2,7 +2,7 @@
 <template>
   <div class="yg-search-bar" :class="{'white': isWhite}">
     <input class="search-bar-input" placeholder="中国音乐公告牌">
-    <span class="search-bar-scan"></span>
+    <span v-show="hasScan" class="search-bar-scan"></span>
   </div>
 </template>
 
@@ -14,13 +14,14 @@ import { Component, Vue, Prop } from "vue-property-decorator";
 })
 export default class SearchBar extends Vue {
   @Prop({ default: false }) public isWhite!: boolean;
+  @Prop({ default: false }) public hasScan!: boolean;
 
   // 数据
   // public a: number = 0;
   // public b: string = "";
   // 生命周期
   public created() {
-    console.log(this.isWhite);
+    console.log(this.hasScan);
   }
   // public mounted(){}
 
@@ -61,11 +62,18 @@ export default class SearchBar extends Vue {
     padding-left: 31px;
     background-image: url("./image/ic_navbar_search@3x.png");
     background-repeat: no-repeat;
-    background-position: 6px 50%;
-    background-size: 19px;
+    background-position: 8px 50%;
+    background-size: 15px;
     font-size: 13px;
     color: #777;
     vertical-align: middle;
+  }
+  .search-bar-scan {
+    width: 24px;
+    height: 24px;
+    margin-left: 18px;
+    background: url("./image/ic_navbar_scan@3x.png") no-repeat center;
+    background-size: cover;
   }
 }
 </style>

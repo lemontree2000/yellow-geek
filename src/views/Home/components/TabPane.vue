@@ -2,14 +2,17 @@
 <template>
   <div class="yg-tab-pane">
     <div class="tabs">
-      <ul>
-        <li class="active">关注</li>
-        <li>推荐</li>
-        <li>附近</li>
-      </ul>
+      <div class="wrapper">
+        <ul>
+          <li class="tab-item active">关注</li>
+          <li class="tab-item">推荐</li>
+          <li class="tab-item">附近</li>
+          <li class="active-bar"></li>
+        </ul>
+      </div>
       <div class="home-recommend">
         <div class="home-recommend-detail">
-          <img src="../../../assets/home-recommend.png" alt="">
+          <img src="../../../assets/home-recommend.png" alt>
           <div>
             <h4>即民晚报：在即刻拍猫的人🐈</h4>
             <p>他拍了一年的猫，现在想记录时代</p>
@@ -24,15 +27,19 @@
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 @Component({
-  components: {},
+  components: {
+    swiper,
+    swiperSlide
+  },
 })
 export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
 
   // 数据
-  // public a: number = 0;
+  public tableIndex: number = 0;
   // public b: string = "";
   // 生命周期
   // public created(){}
@@ -56,23 +63,35 @@ export default class Home extends Vue {
 .yg-tab-pane {
   .tabs {
     background-color: #fff;
-    ul {
+    .wrapper {
       padding: 0 15px;
-      font-size: 0;
-      li {
-        color: @color-text-disabled;
-        font-size: 16px;
-        display: inline-block;
-        padding: 12px 0;
-        margin-right: 30px;
-        box-sizing: border-box;
-        &.active {
-          color: @color-text-base;
-          border-bottom: 4px solid @brand-primary;
+      ul {
+        position: relative;
+        font-size: 0;
+        li.tab-item {
+          color: @color-text-disabled;
+          font-size: 16px;
+          display: inline-block;
+          padding: 12px 0;
+          margin-right: 30px;
+          box-sizing: border-box;
+          &.active-bar {
+            color: @color-text-base;
+          }
+        }
+        li.active-bar {
+          height: 4px;
+          background-color: @brand-primary;
+          width: 32px;
+          position: absolute;
+          bottom:0;
+          transition-duration: 300ms;
+          transform: translateX(62px)
         }
       }
     }
   }
+
   .home-recommend {
     .home-recommend-detail {
       padding: 15px;
@@ -90,7 +109,7 @@ export default class Home extends Vue {
         justify-content: space-around;
         h4 {
           font-size: 16px;
-          color:@color-text-base;
+          color: @color-text-base;
         }
         p {
           font-size: 14px;
@@ -101,7 +120,8 @@ export default class Home extends Vue {
           width: 16px;
           height: 16px;
           padding: 3px;
-          background: url("~@/assets/ic_common_close_gray@3x.png") no-repeat center;
+          background: url("~@/assets/ic_common_close_gray@3x.png") no-repeat
+            center;
           background-size: 16px 16px;
           right: 0;
           top: 0;
