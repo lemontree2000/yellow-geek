@@ -1,27 +1,28 @@
-<!-- 首页 -->
+<!-- 推荐tab页 -->
 <template>
-  <div class="yg-home">
-    <SearchBar/>
-    <TopicBar/>
-    <TabPane/>
+  <div>
+    <RecommendHot/>
+    <DynamicComponent/>
+    <DynamicComponent/>
+    <DynamicComponent/>
+    <DynamicComponent/>
+    <DynamicComponent/>
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
-import SearchBar from "@/components/SearchBar/SearchBar.vue";
-import TopicBar from "./components/TopicBar.vue";
-import TabPane from "./components/TabPane.vue";
+import DynamicComponent from "@/components/DynamicComponent/DynamicComponent.vue";
+import RecommendHot from "./RecommendHot.vue";
 
 @Component({
-  name: "home",
   components: {
-    SearchBar,
-    TopicBar,
-    TabPane
+    DynamicComponent,
+    RecommendHot
   },
 })
-export default class Home extends Vue {
+
+export default class RecommendPage extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
 
   // 数据

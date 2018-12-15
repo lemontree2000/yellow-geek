@@ -48,7 +48,7 @@ import { Component, Vue } from "vue-property-decorator";
 @Component({
   components: {},
 })
-export default class Home extends Vue {
+export default class TopicBar extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
 
   // 数据

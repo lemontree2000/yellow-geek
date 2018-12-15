@@ -5,7 +5,7 @@ import store from "./store/store";
 import { createProvider } from "./vue-apollo";
 import "./vue-class-config";
 import "./router/progressEx";
-
+import "swiper/dist/css/swiper.css";
 import "./styles/index.less";
 
 Vue.config.productionTip = false;
