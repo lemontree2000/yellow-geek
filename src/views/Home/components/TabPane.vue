@@ -61,7 +61,7 @@ export default class Home extends Vue {
   public swiperOption: object = {
     on: {
       touchMove() {
-        console.log("touchmove", this);
+        console.log("touchmove", (this as any).translate);
       }
     }
   };
