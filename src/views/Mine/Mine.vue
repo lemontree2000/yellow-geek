@@ -159,7 +159,7 @@ export default class Home extends Vue {
       background-color: @fill-base;
       margin-bottom: 10px;
       &:last-child {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
       }
       li {
         height: 50px;

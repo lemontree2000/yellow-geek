@@ -14,10 +14,19 @@
           ></li>
           <!-- <li class="tab-item" :class="{'active': tabIndex === 1 }">推荐</li>
           <li class="tab-item" :class="{'active': tabIndex === 2 }">附近</li>-->
-          <li class="active-bar" :style="{transform: `translateX(${tabWidth*tabIndex}px)`}"></li>
+          <li
+            class="active-bar"
+            ref="oBar"
+            :style="{transform: `translateX(${tabWidth*tabIndex}px)`}"
+          ></li>
         </ul>
       </div>
-      <swiper class="yg-tab-container" :options="swiperOption">
+      <swiper
+        @transitionStart="switchTab"
+        class="yg-tab-container"
+        ref="swiperRef"
+        :options="swiperOption"
+      >
         <!-- 关注 -->
         <swiperSlide>
           <FollowPage/>
@@ -36,7 +45,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import FollowPage from "./FollowPage.vue";
 import RecommendPage from "./RecommendPage.vue";
@@ -51,7 +60,6 @@ import NearbyPage from "./NearbyPage.vue";
     NearbyPage
   },
 })
-
 export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
   // 数据
@@ -60,9 +68,12 @@ export default class Home extends Vue {
   public tabWidth: number = 62;
   public swiperOption: object = {
     on: {
-      touchMove() {
-        console.log("touchmove", (this as any).translate);
-      }
+      touchMove: () => {
+        const progress: number = (this.$refs.swiperRef as any).swiper.progress;
+        if (this.$refs.oBar) {
+          (this.$refs.oBar as HTMLElement).style.transform = `translateX(${124 * progress}px)`;
+        }
+      },
     }
   };
   // public b: string = "";
@@ -72,16 +83,25 @@ export default class Home extends Vue {
 
   // methods
   public switchTab(tabIndex: number): void {
-    console.log(tabIndex);
-    this.tabIndex = tabIndex;
+    const { swiper: oSwiper } = this.$refs.swiperRef as any;
+    this.tabIndex = tabIndex === undefined ? oSwiper.activeIndex : tabIndex;
+    if (tabIndex !== undefined ) {
+      oSwiper.slideTo(tabIndex);
+    }
+    if (this.$refs.oBar) {
+      (this.$refs.oBar as HTMLElement).style.transform = `translateX(${this.tabWidth * this.tabIndex}px)`;
+    }
   }
 
   // computed
   // get computedName(){},
 
   // watch
-  // @Watch("child")
-  // onChildChanged(val: string, oldVal: string) { }
+  // @Watch("tabIndex")
+  // onChildChanged(val: string, oldVal: string) {
+  //   console.log(val, oldVal)
+  //   console.log(this.tabIndex);
+  // }
 }
 </script>
 <style lang='less'  scoped>
