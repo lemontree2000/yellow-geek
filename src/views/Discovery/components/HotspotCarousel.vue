@@ -2,15 +2,24 @@
 <template>
   <div class="discovery-carousel">
     discovery-carousel
+    <section>
+      <swiper>
+        <swiperSlide>
+          <section class="carousel-item">
 
+          </section>
+        </swiperSlide>
+      </swiper>
+    </section>
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 @Component({
-  components: {},
+  components: {swiper, swiperSlide},
 })
 export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
@@ -32,7 +41,6 @@ export default class Home extends Vue {
   // @Watch("child")
   // onChildChanged(val: string, oldVal: string) { }
 }
-
 </script>
 <style lang='less'  scoped>
 
