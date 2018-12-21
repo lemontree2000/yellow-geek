@@ -6,17 +6,17 @@
       <swiper>
         <swiperSlide>
           <section class="carousel-item">
-            11
+            <img src="" alt="">
           </section>
         </swiperSlide>
          <swiperSlide>
           <section class="carousel-item">
-            333
+            <img src="" alt="">
           </section>
         </swiperSlide>
          <swiperSlide>
           <section class="carousel-item">
-            44
+            <img src="" alt="">
           </section>
         </swiperSlide>
       </swiper>
