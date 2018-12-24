@@ -1,8 +1,8 @@
 <!-- 热门活动轮播图 -->
 <template>
-  <div class="discovery-carousel">discovery-carousel
-    <section>
-      <swiper>
+  <div class="discovery-carousel">
+    <section class="swiper-wrap">
+      <swiper :options="swiperOptions">
         <swiperSlide>
           <section class="carousel-item">
             <img
@@ -51,7 +51,11 @@ export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
 
   // 数据
-  // public a: number = 0;
+  public swiperOptions: object = {
+    centeredSlides: !0,
+    loop: true,
+    slidesPerView: "auto"
+  };
   // public b: string = "";
   // 生命周期
   // public created(){}
@@ -69,4 +73,28 @@ export default class Home extends Vue {
 }
 </script>
 <style lang='less'  scoped>
+@import "~@/styles/mixin.less";
+.discovery-carousel {
+  .swiper-wrap {
+    padding: 15px 0 15px 0;
+    background: @fill-base;
+    .swiper-slide {
+      width: 80%;
+      transform-style: preserve-3d;
+      .carousel-item {
+        width: 100%;
+        padding-bottom: 10px;
+        font-size: 0;
+        overflow: hidden;
+        img {
+          margin: 0 auto;
+          display: block;
+          border-radius: @radius-lg;
+          width: 95%;
+          box-shadow: 0.4px 3px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
 </style>
