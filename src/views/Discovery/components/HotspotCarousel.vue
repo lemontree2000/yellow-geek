@@ -2,7 +2,7 @@
 <template>
   <div class="discovery-carousel">
     <section class="swiper-wrap">
-      <swiper :options="swiperOptions">
+      <swiper :options="swiperOptions" ref="swiperInstance" @progress="handleSwiperProgress">
         <swiperSlide>
           <section class="carousel-item">
             <img
@@ -52,7 +52,8 @@ export default class Home extends Vue {
 
   // 数据
   public swiperOptions: object = {
-    centeredSlides: !0,
+    centeredSlides: true,
+    watchSlidesProgress: true,
     loop: true,
     slidesPerView: "auto"
   };
@@ -62,7 +63,20 @@ export default class Home extends Vue {
   // public mounted(){}
 
   // methods
-  // public handleClick() {}
+  public handleSwiperProgress() {
+    if (this.$refs.swiperInstance) {
+      // tslint:disable-next-line:no-shadowed-variable
+      const { swiper } = this.$refs.swiperInstance as any;
+      console.log(swiper);
+      for (const slideItem of swiper.slides) {
+        console.log(slideItem);
+        const { progress } = slideItem;
+        const scale = 1 - Math.min(Math.abs(.2 * progress), 1);
+        slideItem.stlye.opacity = 1 - Math.min(Math.abs(progress / 2), 1);
+        slideItem.style.transform = `translate3d(0px,0, ${-Math.abs(150 * progress)}px)`;
+      }
+    }
+  }
 
   // computed
   // get computedName(){},
