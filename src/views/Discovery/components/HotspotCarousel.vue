@@ -43,7 +43,6 @@
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
-
 @Component({
   components: { swiper, swiperSlide },
 })
@@ -65,15 +64,13 @@ export default class Home extends Vue {
   // methods
   public handleSwiperProgress() {
     if (this.$refs.swiperInstance) {
-      // tslint:disable-next-line:no-shadowed-variable
-      const { swiper } = this.$refs.swiperInstance as any;
-      console.log(swiper);
-      for (const slideItem of swiper.slides) {
-        console.log(slideItem);
+      const { swiper: oSwiper } = this.$refs.swiperInstance as any;
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < oSwiper.slides.length; i++) {
+        const slideItem = oSwiper.slides[i];
         const { progress } = slideItem;
-        const scale = 1 - Math.min(Math.abs(.2 * progress), 1);
-        slideItem.stlye.opacity = 1 - Math.min(Math.abs(progress / 2), 1);
-        slideItem.style.transform = `translate3d(0px,0, ${-Math.abs(150 * progress)}px)`;
+        slideItem.style.opacity = 1 - Math.min(Math.abs(progress / 2.3), 1);
+        slideItem.style.transform = `scale(${1 - Math.min(Math.abs(.06 * progress), 1)})`;
       }
     }
   }
