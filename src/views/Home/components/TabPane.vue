@@ -45,7 +45,7 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue, Watch } from "vue-property-decorator";
+import { Component, Vue } from "vue-property-decorator";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import FollowPage from "./FollowPage.vue";
 import RecommendPage from "./RecommendPage.vue";
