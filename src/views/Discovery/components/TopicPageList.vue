@@ -2,15 +2,15 @@
 <template>
   <section class="topic-page-list">
     <section class="tab-header">
-      <ul>
-        <li>推荐</li>
-        <li>资讯</li>
-        <li>游戏</li>
-        <li>趣味</li>
-        <li>科技</li>
-        <li>体育</li>
-        <li>动漫</li>
-      </ul>
+      <swiper>
+        <swiperSlide>推荐</swiperSlide>
+        <swiperSlide>资讯</swiperSlide>
+        <swiperSlide>游戏</swiperSlide>
+        <swiperSlide>趣味</swiperSlide>
+        <swiperSlide>科技</swiperSlide>
+        <swiperSlide>体育</swiperSlide>
+        <swiperSlide>动漫</swiperSlide>
+      </swiper>
     </section>
     <section class="topic-pages">
       <section>1</section>
@@ -22,9 +22,13 @@
 
 <script lang='ts'>
 import { Component, Vue } from "vue-property-decorator";
+import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 @Component({
-  components: {},
+  components: {
+    swiper,
+    swiperSlide
+  },
 })
 export default class Home extends Vue {
   // @Prop({ default: 'default value' }) propB!: string
@@ -49,5 +53,8 @@ export default class Home extends Vue {
 
 </script>
 <style lang='less'  scoped>
-
+@import url("~@/styles/mixin.less");
+.topic-page-list {
+  background: @fill-base;
+}
 </style>
