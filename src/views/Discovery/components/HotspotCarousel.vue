@@ -86,6 +86,7 @@ export default class Home extends Vue {
 <style lang='less'  scoped>
 @import "~@/styles/mixin.less";
 .discovery-carousel {
+  margin-bottom: 15px;
   .swiper-wrap {
     padding: 15px 0 15px 0;
     background: @fill-base;
